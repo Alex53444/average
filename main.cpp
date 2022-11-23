@@ -23,10 +23,10 @@ int main(int argc, char *argv[])
 
     for(int i=0; i<6; i++)
     {
-        str = QString("Type float, window %1, time %2 sample/sec").arg(test.width[i]).arg(average.CalcFloat(SIZESAMPLE, test.width[i]));
+        str = QString("Type float, window %1").arg(test.width[i]) + ", time " + QString::number(average.CalcFloat(SIZESAMPLE, test.width[i]),'g',6) + " sample/sec";
         std::cout << str.toStdString() << std::endl;
 
-        str = QString("Type double, window %1, time %2 sample/sec").arg(test.width[i]).arg(average.CalcDouble(SIZESAMPLE, test.width[i]));
+        str = QString("Type float, window %1").arg(test.width[i]) + ", time " + QString::number(average.CalcDouble(SIZESAMPLE, test.width[i]),'g',6) + " sample/sec";
         std::cout << str.toStdString() << std::endl;
     }
 
